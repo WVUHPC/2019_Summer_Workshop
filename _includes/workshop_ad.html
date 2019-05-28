@@ -3,30 +3,40 @@
 {% endcomment %}
 <div class="jumbotron">
   <div class="row">
-    <div class="col-md-10 col-md-offset-1">
-      <h2>{{page.venue}}</h2>
-      <div class="row">
-        <div class="col-md-6">
-          <p>{{page.humandate}}</p>
-          <p>{% if page.humantime %}{{page.humantime}}{% endif %}</p>
-        </div>
-        <div class="col-md-6">
-          <p>
-          <strong>Instructors:</strong>
-          {% if page.instructor %}
-          {{page.instructor | join: ', ' %}}
-          {% else %}
-          to be announced.
-          {% endif %}
-          </p>
-          {% if page.helper %}
-          <p>
-          <strong>Helpers:</strong>
-          {{page.helper | join: ', ' %}}
-          </p>
-          {% endif %}
-        </div>
+
+      <div class="col-md-6">
+        <p>
+        <a href="{{ site.wvu_site }}" class="pull-left">
+                <img src="{{ page.root }}/assets/img/wvu-rc.png"
+                alt="WVU Research Computing logo" style="width:440px;height:116px;" />
+        </a>
+        </p>
+        <p>
+        <a href="{{ site.wvu_site }}" class="pull-left">
+                <img src="{{ page.root }}/assets/img/wvu-logo.png"
+                alt="WVU Research Computing logo" style="width:440px;height:86px;" />
+        </a>
+        </p>
       </div>
-    </div>
+
+      <div class="col-md-6">
+        <p>
+        <strong>Instructor:</strong>
+        {% if page.instructor %}
+        {{page.instructor | join: ', ' %}}
+        {% else %}
+        to be announced.
+        {% endif %}
+        </p>
+        {% if page.helper %}
+        <p>
+        <strong>Helpers:</strong>
+        {{page.helper | join: ', ' %}}
+        </p>
+        {% endif %}
+        <p>{{page.humandate}}</p>
+        <p>{% if page.humantime %}{{page.humantime}}{% endif %}</p>
+      </div>
+
   </div>
 </div>
